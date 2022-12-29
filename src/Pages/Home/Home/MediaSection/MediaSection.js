@@ -7,6 +7,7 @@ const MediaSection = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
     const imageHostingKey = process.env.REACT_APP_imagebb_key;
     const navigate =useNavigate();
+
     console.log(imageHostingKey);
     const handelAddInformation = data =>{
         const image = data.image[0];
@@ -42,31 +43,34 @@ const MediaSection = () => {
         }
         
        })
-
     }
     return (
      
-        <div className='w-96 p-7'>
+       <div className='w-[600px] border border-sky-400 mx-auto'>
+         <div className='w-[550px]  mx-auto p-7'>
         <h2 className="text-4xl">Add  Media</h2>
         <form onSubmit={handleSubmit(handelAddInformation)}>
-            <div className="form-control w-full max-w-xs">
-                <label className="label"> <span className="label-text">message</span></label>
-                <input type="textarea" {...register("message", {
-                    required: "Message is Required"
-                })} className="input input-bordered w-full max-w-xs" />
-                {errors.name && <p className='text-red-500'>{errors.name.message}</p>}
-            </div>
-            
-            <div className="form-control w-full max-w-xs">
+
+            <div className="form-control w-full ">
                 <label className="label"> <span className="label-text">Photo</span></label>
                 <input type="file" {...register("image", {
                     required: "Photo is Required"
-                })} className="input input-bordered w-full max-w-xs" />
+                })} className="input input-bordered w-full " />
                 {errors.image && <p className='text-red-500'>{errors.image.message}</p>}
             </div>
+
+            <div className="form-control w-full ">
+                <label className="label"> <span className="label-text">message</span></label>
+                <input type="textarea" {...register("message", {
+                    required: "Message is Required"
+                })} className="input input-bordered w-full " />
+                {errors.name && <p className='text-red-500'>{errors.name.message}</p>}
+            </div>
+            
             <input className='btn btn-accent w-full mt-4' value="Add Doctor" type="submit" />
         </form>
     </div>
+       </div>
     );
 };
 

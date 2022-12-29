@@ -1,27 +1,32 @@
 import { useQuery } from '@tanstack/react-query';
 import React from 'react';
+import MediaCard from '../MediaCard/MediaCard';
 
 const Media = () => {
-    const {data : allInfo } = useQuery({
+    const {data : allInfo = [] } = useQuery({
         queryKey: ['allInfo'],
         queryFn: async () =>{
             try{
-                const res = await fetch('http://localhost:5000/addMessages' , {
-                    headers: {
-                        authorization : `bearer ${localStorage.getItem('accessToken')}`
-                    }
-                });
-                const data = await res.json();
+                const res = await fetch('http://localhost:5000/addMessages');
+                const data = res.json();
                 return data;
-            }                                                                                                                                                                                                                               
+            }                                                                                                                                      
             catch(error){
                     console.log(error)
             }
         }
+
     })
+    console.log(allInfo)
     return (
-        <div>
-            <h3 className='text-4xl'>Media Section : {allInfo.length}</h3>
+        <div className='grid lg:grid-cols-3 gap-4 grid-clos-1 mx-auto'>
+            {/* <h3 className='text-4xl'>Media Section : {allInfo.length}</h3> */}
+            {
+                allInfo.map(info => <MediaCard
+                     key={info.id}
+                     info = {info}
+                ></MediaCard>)
+            }
         </div>
     );
 };
