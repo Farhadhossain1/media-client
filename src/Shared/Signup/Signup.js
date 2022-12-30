@@ -19,7 +19,9 @@ const Signup = () => {
                 displayName: data.name,
             }
             updateUser(userInfo)
-            .then( () => {})
+            .then( () => {
+                // saveUser(data.name, data.email);
+            })
             .catch(error => {
                 console.log(error);
             })
@@ -28,6 +30,23 @@ const Signup = () => {
             console.log(error);
         })   
     }
+
+
+    // const saveUser = (name, email) =>{
+    //     const user ={name, email,university: 'Sherpur', address: 'Mymensingh-Bangladesh'};
+    //     fetch('http://localhost:5000/myInformations', {
+    //         method: 'POST',
+    //         headers: {
+    //             'content-type': 'application/json'
+    //         },
+    //         body: JSON.stringify(user)
+    //     })
+    //     .then(res => res.json())
+    //     .then(data =>{
+    //       console.log(data)
+    //     })
+    // }
+
 
     
     return (

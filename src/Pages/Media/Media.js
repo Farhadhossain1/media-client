@@ -10,7 +10,7 @@ const Media = () => {
                 const res = await fetch('http://localhost:5000/addMessages');
                 const data = res.json();
                 return data;
-            }                                                                                                                                      
+            }                                                  
             catch(error){
                     console.log(error)
             }
