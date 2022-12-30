@@ -24,7 +24,8 @@ const MediaSection = () => {
             console.log(imgData.data.url);
             const information = {
                     message: data.message,
-                    image: imgData.data.url
+                    image: imgData.data.url,
+                    name: 'hala'
             }
             fetch('http://localhost:5000/addMessages' ,{
                 method: 'POST',
