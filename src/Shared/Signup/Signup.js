@@ -7,6 +7,7 @@ import { AuthContext } from '../../Comtext/AuthProvider/AuthProvider';
 const Signup = () => {
     const { register,  formState: { errors }, handleSubmit } = useForm();
     const {createUser ,updateUser} = useContext(AuthContext)
+    
     const handleLogin = data =>{
         console.log(data);
         createUser(data.email, data.password)
