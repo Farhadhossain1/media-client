@@ -15,7 +15,7 @@ const Signup = () => {
             console.log(user);
             toast.success('Sign up successfully')
             const userInfo ={
-                displayName: data.name
+                displayName: data.name,
             }
             updateUser(userInfo)
             .then( () => {})
@@ -25,14 +25,13 @@ const Signup = () => {
         })
         .catch(error =>{
             console.log(error);
-        })
-  
-     
-      
+        })   
     }
+
+    
     return (
         <div>
-                  <div className='border border-sky-400 lg:w-[500px] mx-auto rounded-xl mt-12 py-12'>
+                  <div className='border bg-slate-900  border-sky-400 lg:w-[500px] mx-auto rounded-xl mt-12 py-12'>
             <h2 className='text-5xl font-mono text-center mt-12 font-bold'>Sign Up</h2>
             <div className='lg:w-[450px] mx-auto p-7'>
              <form onSubmit={handleSubmit(handleLogin)}>
@@ -76,8 +75,6 @@ const Signup = () => {
                             
             </form>
             <p>New to  <Link className='text-secondary' to="/login">Create new Account</Link></p>
-                {/* <div className="divider">OR</div>
-                <button className='btn btn-outline w-full'>CONTINUE WITH GOOGLE</button> */}
         </div>
         </div>
         </div>

@@ -20,7 +20,6 @@ const Media = () => {
     console.log(allInfo)
     return (
         <div className='grid lg:grid-cols-3 gap-4 grid-clos-1 mx-auto'>
-            {/* <h3 className='text-4xl'>Media Section : {allInfo.length}</h3> */}
             {
                 allInfo.map(info => <MediaCard
                      key={info.id}

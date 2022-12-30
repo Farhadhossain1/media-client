@@ -13,13 +13,13 @@ const Navbar = () => {
   }
 
     const menuItems = <>
-    <li><Link className='text-xl font-semibold text-white ' to="/">Home</Link></li>
-    <li><Link className='text-xl font-semibold text-white ' to="/media">Media</Link></li>
-    <li><Link className='text-xl font-semibold text-white ' to="/">Message</Link></li>
-    <li><Link className='text-xl font-semibold text-white ' to="/about">About</Link></li>
-    <li><Link className='text-xl font-semibold text-white ' to="/login">Login</Link></li>
+    <li><Link className='text-xl font-bold text-slate-900  ' to="/">Home</Link></li>
+    <li><Link className='text-xl font-bold text-slate-900  ' to="/media">Media</Link></li>
+    <li><Link className='text-xl font-bold text-slate-900  ' to="/">Message</Link></li>
+    <li><Link className='text-xl font-bold text-slate-900  ' to="/about">About</Link></li>
+    <li><Link className='text-xl font-bold text-slate-900  ' to="/login">Login</Link></li>
     {user?.uid ?
-    <li><button className='text-xl font-semibold text-white ' onClick={handleLogOut}>Sign Out</button></li> : <li><Link className='text-xl font-semibold text-white ' to="/signup">Sign Up</Link></li>
+    <li><button className='text-xl font-bold text-slate-900  ' onClick={handleLogOut}>Sign Out</button></li> : <li><Link className='text-xl font-bold text-slate-900  ' to="/signup">Sign Up</Link></li>
   }
     
     </>

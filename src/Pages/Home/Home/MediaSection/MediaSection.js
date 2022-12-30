@@ -31,7 +31,6 @@ const MediaSection = () => {
                 method: 'POST',
                 headers: {
                     'content-type' : 'application/json',
-                    // authorization: `bearer ${localStorage.getItem('accessToken')}`
                 },
                 body: JSON.stringify(information)
             })
@@ -47,9 +46,9 @@ const MediaSection = () => {
     }
     return (
      
-       <div className='w-[600px] border border-sky-400 mx-auto'>
-         <div className='w-[550px]  mx-auto p-7'>
-        <h2 className="text-4xl">Add  Media</h2>
+       <div className='lg:w-[600px] border border-gray-400 rounded-lg mx-auto mt-24 bg-slate-900 lg:py-12'>
+         <div className='lg:w-[550px]  mx-auto p-7'>
+        <h2 className="text-4xl text-center mb-8">Creativity Details</h2>
         <form onSubmit={handleSubmit(handelAddInformation)}>
 
             <div className="form-control w-full ">
@@ -68,7 +67,7 @@ const MediaSection = () => {
                 {errors.name && <p className='text-red-500'>{errors.name.message}</p>}
             </div>
             
-            <input className='btn btn-accent w-full mt-4' value="Add Doctor" type="submit" />
+            <input className='btn btn-accent w-full  mt-12' value="Add Creativity " type="submit" />
         </form>
     </div>
        </div>
