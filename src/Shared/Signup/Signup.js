@@ -45,7 +45,8 @@ const Signup = () => {
                             )} placeholder="email" className="input input-bordered w-full "  />
                             {errors.name && <p className='text-red-600 mt-2'>{errors.name?.message}</p>}
                             </div>
-                            
+
+                       
                 <div className="form-control w-full ">
                             <label className="label">
                             <span className="label-text text-xl font-semibold py-4">Email</span>
