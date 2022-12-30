@@ -6,7 +6,7 @@ import { AuthContext } from '../../Comtext/AuthProvider/AuthProvider';
 
 const Signup = () => {
     const { register,  formState: { errors }, handleSubmit } = useForm();
-    const {createUser} = useContext(AuthContext)
+    const {createUser ,updateUser} = useContext(AuthContext)
     const handleLogin = data =>{
         console.log(data);
         createUser(data.email, data.password)
@@ -14,6 +14,14 @@ const Signup = () => {
             const user = result.user;
             console.log(user);
             toast.success('Sign up successfully')
+            const userInfo ={
+                displayName: data.name
+            }
+            updateUser(userInfo)
+            .then( () => {})
+            .catch(error => {
+                console.log(error);
+            })
         })
         .catch(error =>{
             console.log(error);
@@ -67,7 +75,7 @@ const Signup = () => {
                             <input className='btn btn-success my-6  text-black w-full' value="Sign Up" type="submit" />
                             
             </form>
-            <p>New to  <Link className='text-secondary' to="/signup">Create new Account</Link></p>
+            <p>New to  <Link className='text-secondary' to="/login">Create new Account</Link></p>
                 {/* <div className="divider">OR</div>
                 <button className='btn btn-outline w-full'>CONTINUE WITH GOOGLE</button> */}
         </div>

@@ -5,6 +5,7 @@ import Home from "../Pages/Home/Home/Home";
 import Media from "../Pages/Media/Media";
 import Login from "../Shared/Login/Login";
 import Signup from "../Shared/Signup/Signup";
+import PrivateRoute from "./PrivateRoute/PrivateRoute";
 
 const router = createBrowserRouter([
 {
@@ -21,7 +22,7 @@ const router = createBrowserRouter([
         },
         {
             path: '/media',
-            element: <Media></Media>
+            element: <PrivateRoute><Media></Media></PrivateRoute>
         },
         {
             path: '/login',
